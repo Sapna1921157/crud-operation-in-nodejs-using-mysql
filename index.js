@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
+const mysql = require("mysql2");
 var bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -103,7 +103,7 @@ app.post("/index", (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 4000, (error) => {
+app.listen(process.env.PORT || 5000, (error) => {
   if (error) throw error;
   console.log(`Server is running on port ${process.env.PORT}`);
 });
